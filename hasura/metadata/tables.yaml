@@ -1,1 +1,14 @@
-[]
+- table:
+    schema: public
+    name: articles
+- table:
+    schema: public
+    name: users
+  array_relationships:
+    - name: articles
+      using:
+        foreign_key_constraint_on:
+          column: author_id
+          table:
+            schema: public
+            name: articles
