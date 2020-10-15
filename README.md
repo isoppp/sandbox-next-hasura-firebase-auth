@@ -23,3 +23,13 @@ yarn hasura console --project hasura
 
 - Hasura
   - [Docker quickstart](https://hasura.io/docs/1.0/graphql/core/getting-started/docker-simple.html)
+
+## Notes
+
+- Hasura CLI (with `yarn hasura --project hasura ...`)
+  - confirm migrate status
+  - `migrate status`
+  - migrate squash
+  - `migrate squash --name "{NAME}" --from {VERSION}`
+  - skip a migration
+  - `migrate apply --skip-execution --version {VERSION}`
