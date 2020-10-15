@@ -27,9 +27,13 @@ yarn hasura console --project hasura
 ## Notes
 
 - Hasura CLI (with `yarn hasura --project hasura ...`)
+
   - confirm migrate status
   - `migrate status`
   - migrate squash
   - `migrate squash --name "{NAME}" --from {VERSION}`
   - skip a migration
   - `migrate apply --skip-execution --version {VERSION}`
+
+- graphql-codegen CLI
+  - `yarn gql-gen`
