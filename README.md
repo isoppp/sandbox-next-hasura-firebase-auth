@@ -36,4 +36,8 @@ yarn hasura console --project hasura
   - `migrate apply --skip-execution --version {VERSION}`
 
 - graphql-codegen CLI
+
   - `yarn gql-gen`
+
+- Download graphql schema for IDE auto completion
+  - `npx graphqurl http://localhost:8080/v1/graphql/ --introspect > schema.graphql`
