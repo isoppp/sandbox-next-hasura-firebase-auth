@@ -1,0 +1,17 @@
+mutation PostArticle (
+  $author_id: uuid!
+  $content: String!
+  $subject: String!
+  $published_at: timestamptz
+) {
+  insert_articles_one(
+    object: {
+      author_id: $author_id
+      content: $content
+      subject: $subject
+      published_at: $published_at
+    }
+  ) {
+    id
+  }
+}

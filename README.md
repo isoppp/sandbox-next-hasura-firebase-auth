@@ -37,7 +37,7 @@ yarn hasura console --project hasura
 
 - graphql-codegen CLI
 
-  - `yarn gql-gen`
+  - `yarn gql-gen` (-w)
 
 - Download graphql schema for IDE auto completion
   - `npx graphqurl http://localhost:8080/v1/graphql/ --introspect > schema.graphql`
