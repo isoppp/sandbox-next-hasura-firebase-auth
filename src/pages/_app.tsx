@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client'
 import { ApolloProvider } from '@apollo/react-hooks'
+import Head from 'next/head'
 
 const createApolloClient = () => {
   return new ApolloClient({
@@ -14,9 +15,14 @@ const createApolloClient = () => {
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const client = createApolloClient()
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <>
+      <Head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+      </Head>
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </>
   )
 }
 export default MyApp
