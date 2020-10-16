@@ -24,7 +24,7 @@ const ArticlePage: NextPage = () => {
 
   const { user, subject, content } = data.articles_by_pk
   return (
-    <div className="max-w-screen-lg mx-auto p-10">
+    <div>
       <div>{user.display_name}</div>
       <div>{subject}</div>
       <div>{content}</div>

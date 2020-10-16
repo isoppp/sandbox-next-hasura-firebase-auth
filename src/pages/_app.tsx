@@ -20,7 +20,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
       </Head>
       <ApolloProvider client={client}>
-        <Component {...pageProps} />
+        <div className="max-w-screen-lg mx-auto mt-10 p-10 shadow-lg rounded-lg">
+          <Component {...pageProps} />
+        </div>
       </ApolloProvider>
     </>
   )
