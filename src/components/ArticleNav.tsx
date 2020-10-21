@@ -1,8 +1,6 @@
 import Link from 'next/link'
 
-interface Props {}
-
-export default function ArticleNav(props: Props) {
+export default function ArticleNav(): JSX.Element {
   return (
     <div className="flex justify-end gap-4">
       <Link href="/articles/">

@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
 import { NextPage } from 'next'
-import { useGetArticleQuery, usePostArticleMutation } from '@/generated/graphql'
+import { usePostArticleMutation } from '@/generated/graphql'
 import { useForm } from 'react-hook-form'
 import { DUMMY_USER_ID } from '@/constants/dummy'
 
 const ArticlesNew: NextPage = () => {
   const router = useRouter()
   const [postArticle] = usePostArticleMutation()
-  const { register, handleSubmit, watch, errors } = useForm()
+  const { register, handleSubmit } = useForm()
   const onSubmit = async (formData) => {
     const { data } = await postArticle({
       variables: {

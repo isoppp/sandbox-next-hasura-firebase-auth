@@ -13,7 +13,7 @@ const createApolloClient = () => {
   })
 }
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const client = createApolloClient()
   return (
     <>
