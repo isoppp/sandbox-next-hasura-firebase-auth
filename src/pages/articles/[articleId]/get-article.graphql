@@ -1,4 +1,4 @@
-query getArticle($id: uuid!) {
+query GetArticle($id: uuid!) {
   articles_by_pk(id: $id) {
     subject
     created_at
