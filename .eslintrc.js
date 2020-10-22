@@ -12,15 +12,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
   ],
-  rules: {
-    'no-mixed-operators': 'error',
-    'no-console': 'off',
-    'no-undef': 'off',
-    'react/jsx-uses-vars': 1,
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-  },
+  rules: {},
   parserOptions: {
     project: './tsconfig.json',
   },

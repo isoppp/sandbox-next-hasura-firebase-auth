@@ -1,0 +1,7 @@
+mutation UpdateArticle($id: uuid!, $subject: String, $content: String) {
+  update_articles_by_pk(pk_columns: {id: $id}, _set: {subject: $subject, content: $content}) {
+    id
+    subject
+    content
+  }
+}

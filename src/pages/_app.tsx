@@ -1,7 +1,8 @@
 import { AppProps } from 'next/app'
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client'
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 import { ApolloProvider } from '@apollo/react-hooks'
-import 'minireset.css'
+import Head from 'next/head'
+import ArticleNav from '@/components/ArticleNav'
 
 const createApolloClient = () => {
   return new ApolloClient({
@@ -12,12 +13,24 @@ const createApolloClient = () => {
   })
 }
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const client = createApolloClient()
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <>
+      <Head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+      </Head>
+      <ApolloProvider client={client}>
+        <>
+          <div className="max-w-screen-lg mx-auto mt-10">
+            <ArticleNav />
+          </div>
+          <div className="max-w-screen-lg mx-auto mt-6 p-10 shadow-lg rounded-lg">
+            <Component {...pageProps} />
+          </div>
+        </>
+      </ApolloProvider>
+    </>
   )
 }
 export default MyApp

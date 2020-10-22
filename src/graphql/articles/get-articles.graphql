@@ -1,0 +1,10 @@
+query GetArticles {
+  articles {
+    id
+    author_id
+    subject
+    content
+    created_at
+    published_at
+  }
+}
