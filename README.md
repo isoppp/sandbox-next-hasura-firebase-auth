@@ -2,17 +2,13 @@
 
 ## Local development
 
-```bash
-# next
-yarn dev
+1. `docker-compose up` (-d \*optional)
+2. `yarn dev`
 
-# hasura
-docker-compose up (-d *optional)
-yarn hasura console --project hasura
-```
+And then ...
 
-- Open [http://localhost:3000](http://localhost:3000) for Next.js
-- Open [http://localhost:9695](http://localhost:3000) for Hasura Console
+Open [http://localhost:3033](http://localhost:3033) for Next.js  
+Open [http://localhost:9695](http://localhost:9695) for Hasura Console
 
 ## Links
 

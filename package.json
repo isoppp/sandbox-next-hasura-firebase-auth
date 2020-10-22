@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:next": "next dev",
+    "dev:next": "next dev -p 3033",
     "dev:gql-gen": "gql-gen -w",
-    "dev:docker": "docker-compose up",
     "dev:hasura": "hasura console --project hasura",
     "build": "next build",
     "start": "next start",
