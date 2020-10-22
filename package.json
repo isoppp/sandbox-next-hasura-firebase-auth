@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:gql-gen": "gql-gen -w",
+    "dev:docker": "docker-compose up",
+    "dev:hasura": "hasura console --project hasura",
     "build": "next build",
     "start": "next start",
     "lint": "eslint 'src/**/*.{ts,tsx}'"
@@ -37,6 +41,7 @@
     "hasura-cli": "^1.3.2",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "typescript": "^4.0.3"
   },
