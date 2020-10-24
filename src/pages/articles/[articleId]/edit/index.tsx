@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { NextPage } from 'next'
-import { useGetArticleQuery, usePostArticleMutation, useUpdateArticleMutation } from '@/generated/graphql'
+import { useGetArticleQuery, useUpdateArticleMutation } from '@/generated/graphql'
 import { useForm } from 'react-hook-form'
 import { DUMMY_USER_ID } from '@/constants/dummy'
 
