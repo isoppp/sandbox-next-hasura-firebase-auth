@@ -2,10 +2,25 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { useDeleteArticleMutation } from '@/generated/graphql'
+import { auth, signUpWithGoogle } from '@/auth/firebase'
 
 export default function ArticleNav(): JSX.Element {
   const router = useRouter()
   const { articleId } = router.query
+
+  const signUp = ({ name, email, password }) => {
+    return signUpWithGoogle()
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        return { error }
+      })
+  }
+
+  const logIdToken = () => {
+    auth?.currentUser?.getIdToken(true).then((token) => console.log(token))
+  }
 
   const [deleteArticleMutation] = useDeleteArticleMutation()
   const deleteArticle = useCallback(
@@ -48,6 +63,12 @@ export default function ArticleNav(): JSX.Element {
           </a>
         </>
       )}
+      <a className="block py-2 px-4 border rounded-sm" onClick={signUp}>
+        <div>Signup</div>
+      </a>
+      <a className="block py-2 px-4 border rounded-sm" onClick={logIdToken}>
+        <div>LogIdToken</div>
+      </a>
     </div>
   )
 }
