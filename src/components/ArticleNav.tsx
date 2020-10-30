@@ -19,6 +19,7 @@ export default function ArticleNav(): JSX.Element {
   }
 
   const logIdToken = () => {
+    console.log('user', auth?.currentUser)
     auth?.currentUser?.getIdToken(true).then((token) => console.log(token))
   }
 

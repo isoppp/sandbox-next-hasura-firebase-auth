@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "run-p dev:*",
+    "dev": "run-p dev:next dev:gql-gen",
     "dev:next": "next dev -p 3033",
     "dev:gql-gen": "gql-gen -w",
     "dev:hasura": "hasura console --project hasura",
+    "dev:emulate": "GOOGLE_APPLICATION_CREDENTIALS=~/.credentials/sandbox-hasura-firebase.json firebase emulators:start",
+    "predev:emulate": "npm --prefix functions run build",
     "build": "next build",
     "start": "next start",
     "lint": "eslint 'src/**/*.{ts,tsx}'"

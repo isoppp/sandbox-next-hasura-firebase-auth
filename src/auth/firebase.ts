@@ -17,5 +17,8 @@ const provider = new firebase.auth.GoogleAuthProvider()
 const signUpWithGoogle = () => firebase.auth().signInWithPopup(provider)
 const app = firebase.app()
 const auth = firebase.auth()
+if (process.env.NEXT_PUBLIC_LOCAL_DEV) {
+  auth.useEmulator(process.env.NEXT_PUBLIC_FIREBASE_EMULATOR_AUTH_URL || 'http://localhost:9099/')
+}
 export { auth, signUpWithGoogle }
 console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(')
