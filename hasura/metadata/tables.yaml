@@ -64,7 +64,7 @@
         check: {}
         columns:
           - id
-          - display_id
+          - email
           - display_name
           - created_at
           - updated_at
@@ -74,7 +74,7 @@
       permission:
         columns:
           - id
-          - display_id
+          - email
           - display_name
           - created_at
           - updated_at
@@ -84,7 +84,7 @@
       permission:
         columns:
           - id
-          - display_id
+          - email
           - display_name
           - created_at
           - updated_at
