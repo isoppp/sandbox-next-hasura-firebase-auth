@@ -1,4 +1,5 @@
 
+
 ALTER TABLE "public"."users" ALTER COLUMN "email" SET NOT NULL;
 
 ALTER TABLE "public"."users" ALTER COLUMN "display_id" DROP NOT NULL;
@@ -23,3 +24,8 @@ alter table "public"."articles" add foreign key ("author_id") references "public
 alter table "public"."articles" add foreign key ("author_id") references "public"."users"("id") on update restrict on delete restrict;
 
 alter table "public"."articles" add foreign key ("author_id") references "public"."users"("id") on update restrict on delete restrict;
+
+
+DROP TABLE "public"."articles";
+
+DROP TABLE "public"."users";
