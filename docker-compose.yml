@@ -16,12 +16,11 @@ services:
     restart: always
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
-      ## enable the console served by server
-      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false' # set to "false" to disable console
-      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
       HASURA_GRAPHQL_DEV_MODE: 'true'
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-      ## uncomment next line to set an admin secret
-      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+      HASURA_GRAPHQL_ADMIN_SECRET: youradminsecretkey # set other pass in production
+      HASURA_GRAPHQL_JWT_SECRET: '{ "type": "RS256", "jwk_url": "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "audience": "sandbox-hasura-firebase", "issuer": "https://securetoken.google.com/sandbox-hasura-firebase" }'
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: 'anonymous' # default: anonymous
 volumes:
   db_data:
